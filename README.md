@@ -12,8 +12,8 @@ Create a directory in which to keep the model configurations:
 
     mkdir -p ~/access-esm
     cd ~/access-esm
-    git clone https://github.com/coecms/esm-pre-industrial
-    cd esm-pre-industrial
+    git clone https://github.com/coecms/esm-lig
+    cd esm-lig
 
 Run the model:
 
@@ -121,8 +121,8 @@ Create a directory in your home directory to keep all the Control Directories yo
 
 Then clone the most recent version of the ACCESS-ESM control directory:
 
-    git clone https://github.com/coecms/esm-pre-industrial
-    cd esm-pre-industrial
+    git clone https://github.com/coecms/esm-lig
+    cd esm-lig
 
 (Note: Currently we only have the pre-industrial model set up, other versions will follow later.)
 
@@ -132,7 +132,7 @@ Open the `config.yaml` file with your preferred text editor.
 
 Let's have a closer look at the parts:
 
-    jobname: pre-industrial
+    jobname: esm-lig
     queue: normal
     walltime: 20:00:00
 
@@ -154,7 +154,7 @@ The main model. This mainly tells **payu** which driver to use. **payu** knows t
         - name: atmosphere
           model: um
           ncpus: 192
-          exe: /short/public/access-esm/payu/bin/csiro/um_hg3.exe-20190129_15
+          exe: /short/public/access-esm/payu/bin/coe/um_hg3.exe-20190412-pmip-r327
           input:
             - /short/public/access-esm/payu/input/pre-industrial/atmosphere
 
