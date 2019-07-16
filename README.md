@@ -1,4 +1,9 @@
-# ACCESS-ESM with **payu**
+ ACCESS-ESM with **payu**
+
+
+# ACCESS-ESM PMIP4 Mid-Holocene
+
+This configuration relates to https://pmip4.lsce.ipsl.fr/doku.php/exp_design:mh
 
 ## Quickstart Guide
 
@@ -12,8 +17,8 @@ Create a directory in which to keep the model configurations:
 
     mkdir -p ~/access-esm
     cd ~/access-esm
-    git clone https://github.com/coecms/esm-lig
-    cd esm-lig
+    git clone https://github.com/coecms/esm-mh
+    cd esm-mh
 
 Run the model:
 
@@ -121,8 +126,8 @@ Create a directory in your home directory to keep all the Control Directories yo
 
 Then clone the most recent version of the ACCESS-ESM control directory:
 
-    git clone https://github.com/coecms/esm-lig
-    cd esm-lig
+    git clone https://github.com/coecms/esm-mh
+    cd esm-mh
 
 (Note: Currently we only have the pre-industrial model set up, other versions will follow later.)
 
@@ -132,7 +137,7 @@ Open the `config.yaml` file with your preferred text editor.
 
 Let's have a closer look at the parts:
 
-    jobname: esm-lig
+    jobname: esm-mh
     queue: normal
     walltime: 20:00:00
 
