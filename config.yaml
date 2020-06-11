@@ -1,6 +1,6 @@
 jobname: esm-mh
 queue: normal
-walltime: 24:00:00
+walltime: 3:00:00
 
 # note: if laboratory is relative path, it is relative to /short/$PROJECT/$USER
 laboratory: access-esm
@@ -10,37 +10,38 @@ submodels:
     - name: atmosphere
       model: um
       ncpus: 192
-      exe: /short/public/access-esm/payu/bin/coe/um_hg3.exe-20190717-pmip-mh-r335
+      exe: /g/data/access/payu/access-esm/bin/coe/pmip-mh/um_hg3.exe-20200604-pmip-mh-r339
       input:
-        - /short/public/access-esm/payu/input/pre-industrial/atmosphere
+        - /g/data/access/payu/access-esm/input/pre-industrial/atmosphere
 
     - name: ocean
       model: mom
       ncpus: 84
-      exe: /short/public/access-esm/payu/bin/coe/fms_ACCESS-CM.x
+      exe: /g/data/access/payu/access-esm/bin/coe/mom5xx
       input:
-        - /short/public/access-esm/payu/input/common/ocean
-        - /short/public/access-esm/payu/input/pre-industrial/ocean
+        - /g/data/access/payu/access-esm/input/pre-industrial/ocean/common
+        - /g/data/access/payu/access-esm/input/pre-industrial/ocean/pre-industrial
 
     - name: ice
       model: cice
       ncpus: 12
-      exe: /short/public/access-esm/payu/bin/csiro/cice4.1_access-mct-12p-20180108
+      exe: /g/data/access/payu/access-esm/bin/coe/cicexx
       input:
-        - /short/public/access-esm/payu/input/common/ice
+        - /g/data/access/payu/access-esm/input/pre-industrial/ice
 
     - name: coupler
       model: oasis
       ncpus: 0
       input:
-        - /short/public/access-esm/payu/input/common/coupler
+        - /g/data/access/payu/access-esm/input/pre-industrial/coupler
 
 collate:
-   exe: /short/public/access-esm/payu/bin/mppnccombine
+   exe: /g/data/access/payu/access-esm/bin/mppnccombine
    restart: true
    mem: 4GB
 
-restart: /short/public/access-esm/payu/restart/pre-industrial
+restart: /g/data/access/payu/access-esm/restart/pre-industrial
+
 
 calendar:
     start:
@@ -53,8 +54,8 @@ calendar:
         months: 0
         days: 0
 
-runspersub: 7
+runspersub: 1
 
 stacksize: unlimited
 
-qsub_flags: -W umask=027
+qsub_flags: -W umask=027 -l storage=gdata/access
