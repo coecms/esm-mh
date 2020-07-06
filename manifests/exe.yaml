@@ -1,18 +1,13 @@
 format: yamanifest
 version: 1.0
 ---
-work/atmosphere/um_hg3.exe-20200604-pmip-mh-r339:
-  fullpath: /g/data/access/payu/access-esm/bin/coe/pmip-mh/um_hg3.exe-20200604-pmip-mh-r339
-  hashes:
-    binhash: 8df699d542a7c136ffcd2476d451683a
-    md5: 81a73002aec9d0a84a354da1b6e0ccd7
 work/ice/cicexx:
-  fullpath: /g/data/access/payu/access-esm/bin/coe/cicexx
+  fullpath: /g/data/access/payu/access-esm-pmip/pmip-mh/bin/cicexx
   hashes:
-    binhash: 612c5f22405c074531e5d415bdc32a02
-    md5: 2d8befa0957c1196f8ba387f36b7c1ef
+    binhash: 018e0dcf4b20fd68146886dc603f2494
+    md5: f0b4fd30e8c6a610b3b38acc21bb7f7f
 work/ocean/mom5xx:
-  fullpath: /g/data/access/payu/access-esm/bin/coe/mom5xx
+  fullpath: /g/data/access/payu/access-esm-pmip/pmip-mh/bin/mom5xx
   hashes:
-    binhash: 892a661fe3c35d2e7add6b2fbf041984
-    md5: 9b3592016605846dfda306a81ed9579c
+    binhash: d0fb87c8a100bcc7d7c77f748e7795b1
+    md5: 0379a87d865b45ea7d8cbc1fb53c9d5e
