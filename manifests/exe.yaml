@@ -1,6 +1,11 @@
 format: yamanifest
 version: 1.0
 ---
+work/atmosphere/um_hg3_20200706_pmip-mh_r345.exe:
+  fullpath: /g/data/access/payu/access-esm-pmip/pmip-mh/bin/um_hg3_20200706_pmip-mh_r345.exe
+  hashes:
+    binhash: 8a74a92efc1032fa24d260e6cb62d17c
+    md5: d9354a561d67a6c3c1ae9414a6e1b99a
 work/ice/cicexx:
   fullpath: /g/data/access/payu/access-esm-pmip/pmip-mh/bin/cicexx
   hashes:
