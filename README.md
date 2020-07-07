@@ -10,7 +10,7 @@ This configuration relates to https://pmip4.lsce.ipsl.fr/doku.php/exp_design:mh
 
 Get payu:
 
-    module use /g/data3/hh5/public/modules
+    module use /g/data/hh5/public/modules
     module load git conda/analysis3-unstable
 
 Create a directory in which to keep the model configurations:
@@ -107,7 +107,7 @@ Pre-compiled executables for these models are available on raijin at
 On `raijin`, first make sure that you have access to our modules.
 This can most easily been done by adding the line
 
-    module use /g/data3/hh5/public/modules
+    module use /g/data/hh5/public/modules
 
 to your `~/.profile`, then logging back in. Then all you have to do is
 
@@ -277,7 +277,7 @@ of CICE will be in the `ice` subdirectory.
 
 ## Running the Model
 
-If you have set up the modules system to use the `/g/data3/hh5/public/modules` folder, a simple `module load conda/analysis3-unstable` should give you access to the **payu** system.
+If you have set up the modules system to use the `/g/data/hh5/public/modules` folder, a simple `module load conda/analysis3-unstable` should give you access to the **payu** system.
 
 From the control directory, type
 
