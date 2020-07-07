@@ -20,6 +20,10 @@ Create a directory in which to keep the model configurations:
     git clone https://github.com/coecms/esm-mh
     cd esm-mh
 
+Create a branch to collect all the run configurations in
+
+    git checkout -b runs
+
 Run the model:
 
     payu run
@@ -129,7 +133,10 @@ Then clone the most recent version of the ACCESS-ESM control directory:
     git clone https://github.com/coecms/esm-mh
     cd esm-mh
 
-(Note: Currently we only have the pre-industrial model set up, other versions will follow later.)
+When running the model, payu will use the git repository to archive the different configuations.
+It's a good idea to not have this happen in the master branch, so we can create and check out a branch specifically for the runs:
+
+    git checkout -b runs
 
 ### Setting up the Master Configuration file.
 
@@ -159,30 +166,31 @@ The main model. This mainly tells **payu** which driver to use. **payu** knows t
         - name: atmosphere
           model: um
           ncpus: 192
-          exe: /short/public/access-esm/payu/bin/coe/um_hg3.exe-20190412-pmip-r327
+          exe: /g/data/access/payu/access-esm-pmip/pmip-mh/bin/um_hg3_20200706_pmip-mh_r345.exe
           input:
-            - /short/public/access-esm/payu/input/pre-industrial/atmosphere
-
+            - /g/data/access/payu/access-esm/input/pre-industrial/atmosphere
+            - /g/data/access/payu/access-esm/input/pre-industrial/start_dump
+    
         - name: ocean
           model: mom
-          ncpus: 84
-          exe: /short/public/access-esm/payu/bin/coe/fms_ACCESS-CM.x
+          ncpus: 180
+          exe: /g/data/access/payu/access-esm-pmip/pmip-mh/bin/mom5xx
           input:
-            - /short/public/access-esm/payu/input/common/ocean
-            - /short/public/access-esm/payu/input/pre-industrial/ocean
-
+            - /g/data/access/payu/access-esm/input/pre-industrial/ocean/common
+            - /g/data/access/payu/access-esm/input/pre-industrial/ocean/pre-industrial
+    
         - name: ice
           model: cice
           ncpus: 12
-          exe: /short/public/access-esm/payu/bin/csiro/cice4.1_access-mct-12p-20180108
+          exe: /g/data/access/payu/access-esm-pmip/pmip-mh/bin/cicexx
           input:
-            - /short/public/access-esm/payu/input/common/ice
-
+            - /g/data/access/payu/access-esm/input/pre-industrial/ice
+    
         - name: coupler
           model: oasis
           ncpus: 0
           input:
-            - /short/public/access-esm/payu/input/common/coupler
+            - /g/data/access/payu/access-esm/input/pre-industrial/coupler
 
 This is probably the meatiest part of the configuration, so let's look at it in more detail.
 
@@ -197,7 +205,7 @@ The **name** is more than a useful reminder of what the model is.
 **payu** expects this submodel's configuration files in a subdirectory with that name.
 
     collate:
-       exe: /short/public/access-esm/payu/bin/mppnccombine
+       exe: /g/data/access/payu/access-esm/bin/mppnccombine
        restart: true
        mem: 4GB
 
@@ -208,7 +216,7 @@ the `restart: true` option means the restart files from the **previous** run are
 collated. This saves space and cuts down the number of files which makes more efficient
 use of storage and better for archiving in the future.
 
-    restart: /short/public/access-esm/payu/restart/pre-industrial
+    restart: /g/data/access/payu/access-esm/restart/pre-industrial
 
 This is the location of the warm restart files.
 **payu** will use the restart files in there for the initial run.
