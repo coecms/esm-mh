@@ -1,3 +1,5 @@
+> **_NOTE:_** Please don't use this any more. Use https://github.com/coecms/access-esm instead
+
  ACCESS-ESM with **payu**
 
 
